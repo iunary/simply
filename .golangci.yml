@@ -1,0 +1,84 @@
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    # - dogsled
+    - dupl
+    - durationcheck
+    - exhaustive
+    - exportloopref
+    - gci
+    - gofmt
+    - gofumpt
+    - gomoddirectives
+    - goprintffuncname
+    - govet
+    - importas
+    - ineffassign
+    - makezero
+    - misspell
+    - nakedret
+    - nilerr
+    - noctx
+    - nolintlint
+    - prealloc
+    - predeclared
+    - revive
+    - staticcheck
+    - stylecheck
+    - tparallel
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - whitespace
+
+linters-settings:
+  wsl:
+    fix: true
+  errcheck:
+    fix: true
+    check-type-assertions: true
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+  gocritic:
+    fix: true
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+  gomnd:
+    fix: true
+    settings:
+      mnd:
+        # don't include the "operation" and "assign" checks
+        checks:
+          - argument
+          - case
+          - condition
+          - return
+  govet:
+    fix: true
+  nestif:
+    min-complexity: 15
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+  tagliatelle:
+    case:
+      rules:
+        json: snake
+  varnamelen:
+    fix: true
+    max-distance: 10
+    ignore-decls:
+      - t testing.T
+      - i int
+      - j int
+      - ch Change
+      - ch *Change
+      - c *cli.Context
+      - op *Operation

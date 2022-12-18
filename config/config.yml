@@ -1,0 +1,10 @@
+---
+app:
+  name: simply
+http:
+  port: 8888
+  host: "0.0.0.0"
+  mode: "release"
+db:
+  source: host=localhost port=5432 user=simply dbname=simply password=simply sslmode=disable
+  driver: "postgres"
